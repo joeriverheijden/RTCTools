@@ -44,7 +44,7 @@ model Wieringermeer_afdeling1
 
   Deltares.ChannelFlow.Hydraulic.BoundaryConditions.Level Waddenzee annotation(
     Placement(visible = true, transformation(origin = {92, 30}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
-  Deltares.ChannelFlow.Hydraulic.Storage.Linear Afdeling1(A = 540000, H_b = -4.70, HQ.H(min = -4.7, max = -4.5, V(nominal = 1E5))) annotation(
+  Deltares.ChannelFlow.Hydraulic.Storage.Linear Afdeling1(A = 540000, H_b = -4.70, HQ.H(min = -4.7, max = -4.5), V(nominal = 1E5)) annotation(
     Placement(visible = true, transformation(origin = {24, 78}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Deltares.ChannelFlow.Hydraulic.BoundaryConditions.Discharge RR_afdeling1 annotation(
     Placement(visible = true, transformation(origin = {22, 34}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
