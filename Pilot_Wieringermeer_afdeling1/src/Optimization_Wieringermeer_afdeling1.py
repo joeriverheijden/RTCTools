@@ -4,7 +4,7 @@ import sys
 from rtctools.optimization.collocated_integrated_optimization_problem import CollocatedIntegratedOptimizationProblem
 from rtctools.optimization.goal_programming_mixin import GoalProgrammingMixin, Goal, StateGoal
 from rtctools.optimization.modelica_mixin import ModelicaMixin
-from rtctools.optimization.csv_mixin import CSVMixin
+from rtctools.optimization.pi_mixin import PIMixin
 from rtctools.util import run_optimization_problem
 from rtctools_hydraulic_structures.pumping_station_mixin import \
     PumpingStationMixin, PumpingStation, plot_operating_points
@@ -30,7 +30,7 @@ class WaterLevelRangeGoal(StateGoal):
         super(WaterLevelRangeGoal, self).__init__(optimization_problem)
 
 
-class Wieringermeer_afdeling1(PumpingStationMixin, GoalProgrammingMixin, CSVMixin, ModelicaMixin,
+class Wieringermeer_afd1(PumpingStationMixin, GoalProgrammingMixin, PIMixin, ModelicaMixin,
               CollocatedIntegratedOptimizationProblem):
     """
     An example showing the basic usage of the PumpingStationMixin. It consists of two goals:
@@ -39,10 +39,10 @@ class Wieringermeer_afdeling1(PumpingStationMixin, GoalProgrammingMixin, CSVMixi
     """
 
     # Set the target minimum and maximum water levels.
-    wl_min, wl_max = (-4.70,-4.50)
+    wl_min, wl_max = (-4.60,-4.55)
 
     def __init__(self, *args, **kwargs):
-        super(Wieringermeer_afdeling1, self).__init__(*args, **kwargs)
+        super(Wieringermeer_afd1, self).__init__(*args, **kwargs)
 
         self.__output_folder = kwargs['output_folder']  # So we can write our pictures to it
 
@@ -60,17 +60,17 @@ class Wieringermeer_afdeling1(PumpingStationMixin, GoalProgrammingMixin, CSVMixi
         return self.__pumping_stations
 
     def path_goals(self):
-        goals = super(Wieringermeer_afdeling1, self).path_goals()
+        goals = super(Wieringermeer_afd1, self).path_goals()
         goals.append(WaterLevelRangeGoal(self))
         return goals
 
     def solver_options(self):
-        options = super(Wieringermeer_afdeling1, self).solver_options()
+        options = super(Wieringermeer_afd1, self).solver_options()
         options['print_level'] = 2
         return options
 
     def post(self):
-        super(Wieringermeer_afdeling1, self).post()
+        super(Wieringermeer_afd1, self).post()
 
         results = self.extract_results()
 
@@ -131,11 +131,11 @@ class Wieringermeer_afdeling1(PumpingStationMixin, GoalProgrammingMixin, CSVMixi
         axarr[2].set_ylim(-0.1, ymax + 0.1)
 
         axarr[3].set_ylabel('Discharge\n[$\mathdefault{m^3\!/s}$]')
-        axarr[3].step(times, results['leemanspumpingstationafd1.pomp1.Q'], label='Pump 1',
+        axarr[3].step(times, results['leemanspumpingstationafd1_pomp1_Q'], label='Pump 1',
                       linewidth=2, color='b')
         axarr[3].step(times, results['leemanspumpingstationafd1.pomp2.Q'], label='Pump 2',
                       linewidth=2, color='r')
-        axarr[3].plot(times, self.get_timeseries('Q_in', 0).values, label='Inflow',
+        axarr[3].plot(times, self.get_timeseries('RR_afdeling1_Q', 0).values, label='Inflow',
                       linewidth=2, color='g')
         ymin, ymax = axarr[3].get_ylim()
 
@@ -145,7 +145,7 @@ class Wieringermeer_afdeling1(PumpingStationMixin, GoalProgrammingMixin, CSVMixi
         axarr[4].set_ylabel('Pump speed\n[$\mathdefault{min^{-1}}$]')
         axarr[4].step(times, results['leemanspumpingstationafd1.pomp1_speed'], label='Pump 1',
                       linewidth=2, color='b')
-        axarr[4].step(times, results['leemanspumpingstationafd1.pomp2_speed'], label='Pump 2',
+        axarr[4].step(times, results['leemanspumpingstationafd1.pomp1_speed'], label='Pump 2',
                       linewidth=2, color='r')
         ymin, ymax = axarr[4].get_ylim()
         axarr[4].set_ylim(-0.05 * (ymax - ymin), ymax * 1.1)
@@ -167,4 +167,4 @@ class Wieringermeer_afdeling1(PumpingStationMixin, GoalProgrammingMixin, CSVMixi
         plot_operating_points(self, self._output_folder)
 
 # Run
-run_optimization_problem(Wieringermeer_afdeling1, base_folder='..')
+run_optimization_problem(Wieringermeer_afd1, base_folder='..')

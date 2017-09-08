@@ -1,4 +1,4 @@
-model Wieringermeer_afdeling1
+model Wieringermeer_afd1
   //model
   model LeemansPumpingStation
     extends Deltares.HydraulicStructures.PumpingStation.PumpingStation(
@@ -7,25 +7,25 @@ model Wieringermeer_afdeling1
 
     model LeemansPump
       extends Deltares.HydraulicStructures.PumpingStation.Pump(
-        power_coefficients = {{   16642.8552, -13304.1852, 2705.5534},
-                              {   12146.6824,   5630.3662,    0.0000},
-                              {    4713.9123,      0.0000,    0.0000}},
-        working_area = {{{       0.6906,         -0.1092,          0.0000},
+        power_coefficients = {{   13236.1004,     -36650.5647,      24535.8583},
+                              {    8513.9587,       5303.0883,          0.0000},
+                              {    1262.6781,          0.0000,          0.0000}},
+        working_area = {{{       2.6847,         -1.9605,          0.0000},
                          {      -1.0000,          0.0000,          0.0000},
                          {       0.0000,          0.0000,          0.0000}},
-                        {{       2.9109,          0.2217,         -0.0381},
+                        {{       6.3049,          4.7854,         -2.0920},
                          {      -1.0000,          0.0000,          0.0000},
                          {       0.0000,          0.0000,          0.0000}},
-                        {{      -1.5031,          1.6491,          0.0000},
+                        {{      -4.2439,          9.6213,          0.0000},
                          {      -1.0000,          0.0000,          0.0000},
                          {       0.0000,          0.0000,          0.0000}},
-                        {{      -0.0000,          0.0000,          0.0138},
+                        {{       0.3765,         -0.3507,          0.0000},
                          {      -1.0000,          0.0000,          0.0000},
                          {       0.0000,          0.0000,          0.0000}}},
 
-        speed_coefficients = {{      71.2379,          8.8264,          1.4439},
-                              {     133.3942,         -6.1111,          0.0000},
-                              {     -10.3665,          0.0000,          0.0000}},
+       speed_coefficients = {{      57.9771,         58.6969,         13.1813},
+                             {      41.1421,         -8.6973,          0.0000},
+                             {      -0.6101,          0.0000,          0.0000}},
 
         working_area_direction = {-1, 1, 1, -1},
 
@@ -44,7 +44,7 @@ model Wieringermeer_afdeling1
 
   Deltares.ChannelFlow.Hydraulic.BoundaryConditions.Level Waddenzee annotation(
     Placement(visible = true, transformation(origin = {92, 30}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
-  Deltares.ChannelFlow.Hydraulic.Storage.Linear Afdeling1(A = 540000, H_b = -4.70, HQ.H(min = -4.7, max = -4.5), V(nominal = 1E5)) annotation(
+  Deltares.ChannelFlow.Hydraulic.Storage.Linear Afdeling1(A = 540000, H_b = -4.70, HQ.H(min = -4.7, max = -4.5),V(nominal = 1E5)) annotation(
     Placement(visible = true, transformation(origin = {24, 78}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Deltares.ChannelFlow.Hydraulic.BoundaryConditions.Discharge RR_afdeling1 annotation(
     Placement(visible = true, transformation(origin = {22, 34}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
@@ -81,4 +81,4 @@ equation
     Icon(coordinateSystem(extent = {{-160, -100}, {100, 100}})),
     version = "",
     uses);
-end Wieringermeer_afdeling1;
+end Wieringermeer_afd1;
