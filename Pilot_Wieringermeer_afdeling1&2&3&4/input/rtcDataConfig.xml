@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rtcDataConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rtc="http://www.wldelft.nl/fews" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews ./bin/rtcDataConfig.xsd">
+	<importSeries>
+		<PITimeSeriesFile>
+			<timeSeriesFile>timeseries_import.xml</timeSeriesFile>
+			<useBinFile>false</useBinFile>
+		</PITimeSeriesFile>
+		<!--States of model-->
+		<timeSeries id="Afdeling1.HQ.H">
+			<PITimeSeries>
+				<locationId>Afdeling_H1</locationId>
+				<parameterId>H.measured</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="Afdeling2.HQ.H">
+			<PITimeSeries>
+				<locationId>Afdeling2_H1</locationId>
+				<parameterId>H.measured</parameterId>
+			</PITimeSeries>
+		</timeSeries>		
+		<timeSeries id="Afdeling3.HQ.H">
+			<PITimeSeries>
+				<locationId>Afdeling3_H1</locationId>
+				<parameterId>H.measured</parameterId>
+			</PITimeSeries>
+		</timeSeries>		
+		<timeSeries id="Afdeling4.HQ.H">
+			<PITimeSeries>
+				<locationId>Afdeling4_H1</locationId>
+				<parameterId>H.measured</parameterId>
+			</PITimeSeries>
+		</timeSeries>						
+		<!--Upstream Boundary Conditions-->
+		<timeSeries id="energy_price">
+			<PITimeSeries>
+				<locationId>PriceArea</locationId>
+				<parameterId>Price.measured</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="RR_afdeling1_Q">
+			<PITimeSeries>
+				<locationId>Afdeling1</locationId>
+				<parameterId>Q.measured.aanvoer</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="RR_afdeling2_Q">
+			<PITimeSeries>
+				<locationId>Afdeling2</locationId>
+				<parameterId>Q.measured.aanvoer</parameterId>
+			</PITimeSeries>
+		</timeSeries>	
+		<timeSeries id="RR_afdeling3_Q">
+			<PITimeSeries>
+				<locationId>Afdeling3</locationId>
+				<parameterId>Q.measured.aanvoer</parameterId>
+			</PITimeSeries>
+		</timeSeries>			
+		<timeSeries id="RR_afdeling4_Q">
+			<PITimeSeries>
+				<locationId>Afdeling4</locationId>
+				<parameterId>Q.measured.aanvoer</parameterId>
+			</PITimeSeries>
+		</timeSeries>				
+		<timeSeries id="Waddenzee_H">
+			<PITimeSeries>
+				<locationId>Waddenzee_H2</locationId>
+				<parameterId>H.measured</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="IJsselmeer_H">
+			<PITimeSeries>
+				<locationId>IJsselmeer_H2</locationId>
+				<parameterId>H.measured</parameterId>
+			</PITimeSeries>
+		</timeSeries>		
+	</importSeries>
+	
+	<exportSeries>
+		<PITimeSeriesFile>
+			<timeSeriesFile>timeseries_export.xml</timeSeriesFile>
+			<useBinFile>false</useBinFile>
+		</PITimeSeriesFile>
+		<timeSeries id="C">
+			<PITimeSeries>
+				<locationId>TAG_000091</locationId>
+				<parameterId>Costs.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+<!--Leemans 1-->		
+		<timeSeries id="Q_pumps_leemanspumpingstationafd1">
+			<PITimeSeries>
+				<locationId>Leemans1</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="pomp1_head_leemanspumpingstationafd1">
+			<PITimeSeries>
+				<locationId>Leemans1_P1</locationId>
+				<parameterId>head.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="pomp2_head_leemanspumpingstationafd1">
+			<PITimeSeries>
+				<locationId>Leemans1_P2</locationId>
+				<parameterId>head.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>		
+		<timeSeries id="leemanspumpingstationafd1_pomp1_Q">
+			<PITimeSeries>
+				<locationId>Leemans1_P1</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="leemanspumpingstationafd1_pomp2_Q">
+			<PITimeSeries>
+				<locationId>Leemans1_P2</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+<!--		<timeSeries id="pomp1_discharge_leemanspumpingstationafd1">
+			<PITimeSeries>
+				<locationId>Leemans1_P1</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>	
+		</timeSeries>				
+		<timeSeries id="pomp2_discharge_leemanspumpingstationafd1">
+			<PITimeSeries>
+				<locationId>Leemans1_P2</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>	-->									
+<!--Leemans 2-->		
+		<timeSeries id="Q_pumps_leemanspumpingstationafd3">
+			<PITimeSeries>
+				<locationId>Leemans2</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="pomp1_head_leemanspumpingstationafd3">
+			<PITimeSeries>
+				<locationId>Leemans2_P1</locationId>
+				<parameterId>head.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="pomp2_head_leemanspumpingstationafd3">
+			<PITimeSeries>
+				<locationId>Leemans2_P2</locationId>
+				<parameterId>head.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>		
+		<timeSeries id="leemanspumpingstationafd3_pomp1_Q">
+			<PITimeSeries>
+				<locationId>Leemans2_P1</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="leemanspumpingstationafd3_pomp2_Q">
+			<PITimeSeries>
+				<locationId>Leemans2_P2</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+<!--		<timeSeries id="pomp1_discharge_leemanspumpingstationafd3">
+			<PITimeSeries>
+				<locationId>Leemans2_P1</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>	
+		</timeSeries>				
+		<timeSeries id="pomp2_discharge_leemanspumpingstationafd3">
+			<PITimeSeries>
+				<locationId>Leemans2_P2</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>	
+		</timeSeries>-->				
+<!--Lely3-->
+		<timeSeries id="Q_pumps_lelypumpingstationafd3">
+			<PITimeSeries>
+				<locationId>Lely3</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="pomp1_head_lelypumpingstationafd3">
+			<PITimeSeries>
+				<locationId>Lely3_P1</locationId>
+				<parameterId>head.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>		
+		<timeSeries id="lelypumpingstationafd3_pomp1_Q">
+			<PITimeSeries>
+				<locationId>Lely3_P1</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+<!--		<timeSeries id="pomp1_discharge_lelypumpingstationafd3">
+			<PITimeSeries>
+				<locationId>Lely3_P1</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>	
+		</timeSeries>-->
+<!--Lely 2-->
+		<timeSeries id="Q_pumps_lelypumpingstationafd2">
+			<PITimeSeries>
+				<locationId>Lely2</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="pomp1_head_lelypumpingstationafd2">
+			<PITimeSeries>
+				<locationId>Lely2_P1</locationId>
+				<parameterId>head.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>		
+		<timeSeries id="lelypumpingstationafd2_pomp1_Q">
+			<PITimeSeries>
+				<locationId>Lely2_P1</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+<!--		<timeSeries id="pomp1_discharge_lelypumpingstationafd2">
+			<PITimeSeries>
+				<locationId>Lely2_P1</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>	
+		</timeSeries>	-->	
+		<!--Lely 4-->
+		<timeSeries id="Q_pumps_lelypumpingstationafd4">
+			<PITimeSeries>
+				<locationId>Lely4</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="pomp1_head_lelypumpingstationafd4">
+			<PITimeSeries>
+				<locationId>Lely4_P1</locationId>
+				<parameterId>head.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>		
+		<timeSeries id="lelypumpingstationafd4_pomp1_Q">
+			<PITimeSeries>
+				<locationId>Lely4_P1</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+<!--		<timeSeries id="pomp1_discharge_lelypumpingstationafd4">
+			<PITimeSeries>
+				<locationId>Lely4_P1</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>	
+		</timeSeries>-->
+<!--hoekvaart-->				
+		<timeSeries id="Q_pumps_hoekvaartpumpingstation">
+			<PITimeSeries>
+				<locationId>Hoekvaart</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="pomp1_head_hoekvaartpumpingstation">
+			<PITimeSeries>
+				<locationId>Hoekvaart_P1</locationId>
+				<parameterId>head.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="pomp2_head_hoekvaartpumpingstation">
+			<PITimeSeries>
+				<locationId>Hoekvaart_P2</locationId>
+				<parameterId>head.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>		
+		<timeSeries id="hoekvaartpumpingstation_pomp1_Q">
+			<PITimeSeries>
+				<locationId>Hoekvaart_P1</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="hoekvaartpumpingstation_pomp2_Q">
+			<PITimeSeries>
+				<locationId>Hoekvaart_P2</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+<!--		<timeSeries id="pomp1_discharge_hoekvaartpumpingstation">
+			<PITimeSeries>
+				<locationId>Hoekvaart_P1</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>	
+		</timeSeries>				
+		<timeSeries id="pomp2_discharge_hoekvaartpumpingstation">
+			<PITimeSeries>
+				<locationId>Hoekvaart_P2</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>	
+		</timeSeries>	-->
+<!--Slootvaart-->			
+		<timeSeries id="Q_pumps_slootvaartpumpingstation">
+			<PITimeSeries>
+				<locationId>Slootvaart</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="pomp1_head_slootvaartpumpingstation">
+			<PITimeSeries>
+				<locationId>Slootvaart_P1</locationId>
+				<parameterId>head.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="pomp2_head_slootvaartpumpingstation">
+			<PITimeSeries>
+				<locationId>Slootvaart_P2</locationId>
+				<parameterId>head.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>		
+		<timeSeries id="slootvaartpumpingstation_pomp1_Q">
+			<PITimeSeries>
+				<locationId>Slootvaart_P1</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="slootvaartpumpingstation_pomp2_Q">
+			<PITimeSeries>
+				<locationId>Slootvaart_P2</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+<!--		<timeSeries id="pomp1_discharge_slootvaartpumpingstation">
+			<PITimeSeries>
+				<locationId>Slootvaart_P1</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>	
+		</timeSeries>				
+		<timeSeries id="pomp2_discharge_slootvaartpumpingstation">
+			<PITimeSeries>
+				<locationId>Slootvaart_P2</locationId>
+				<parameterId>Q.pump.rtc</parameterId>
+			</PITimeSeries>	
+		</timeSeries>-->
+		<timeSeries id="Afdeling1_HQ_H">
+			<PITimeSeries>
+				<locationId>Afdeling1_H1</locationId>
+				<parameterId>H.measured.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="Afdeling2_HQ_H">
+			<PITimeSeries>
+				<locationId>Afdeling2_H1</locationId>
+				<parameterId>H.measured.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="Afdeling3_HQ_H">
+			<PITimeSeries>
+				<locationId>Afdeling3_H1</locationId>
+				<parameterId>H.measured.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="Afdeling4_HQ_H">
+			<PITimeSeries>
+				<locationId>Afdeling4_H1</locationId>
+				<parameterId>H.measured.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>							
+		<timeSeries id="Waddenzee_H_out">
+			<PITimeSeries>
+				<locationId>Waddenzee_H1</locationId>
+				<parameterId>H.measured.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>
+		<timeSeries id="IJsselmeer_H_out">
+			<PITimeSeries>
+				<locationId>IJsselmeer_H1</locationId>
+				<parameterId>H.measured.rtc</parameterId>
+			</PITimeSeries>
+		</timeSeries>		
+	</exportSeries>
+</rtcDataConfig>
