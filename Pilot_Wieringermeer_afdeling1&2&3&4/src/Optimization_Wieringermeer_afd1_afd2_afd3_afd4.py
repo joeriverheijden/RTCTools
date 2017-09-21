@@ -86,6 +86,16 @@ class WaterLevelRangeGoalAfdeling4(StateGoal):
 
         super(WaterLevelRangeGoalAfdeling4, self).__init__(optimization_problem)
 
+#class MinimizeCostsGoal(Goal):
+#    def function(self, optimization_problem, ensemble_member):
+#        return optimization_problem.integral('energy_price')
+
+    # 24 time steps of 1 hour each of 1.5 m3/s of ~2 m head of 0.2 $/m3 of
+    # 3600 seconds/hour
+
+#    priority = 3
+#    order = 1
+
 
 class Wieringermeer_afd1_afd2_afd3_afd4(PumpingStationMixin, GoalProgrammingMixin, PIMixin, ModelicaMixin,
               CollocatedIntegratedOptimizationProblem):
@@ -141,6 +151,7 @@ class Wieringermeer_afd1_afd2_afd3_afd4(PumpingStationMixin, GoalProgrammingMixi
         goals.append(WaterLevelRangeGoalAfdeling2(self))
         goals.append(WaterLevelRangeGoalAfdeling3(self))
         goals.append(WaterLevelRangeGoalAfdeling4(self))
+#        goals.append(MinimizeCostsGoal(self))
 
         return goals
 
